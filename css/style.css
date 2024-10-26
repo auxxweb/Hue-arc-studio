@@ -265,8 +265,8 @@ h1, h2, h3, h4, h5,
   .map-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh; /* Adjust based on your container's height */
+    /* align-items:; */
+    height: 50vh; /* Adjust based on your container's height */
   }
   
   .map-container {
