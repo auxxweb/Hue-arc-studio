@@ -243,16 +243,18 @@
                   </div>
                   <div class="mb-5">
                     <h2 class="footer-heading mb-4">Subscribe to Newsletter</h2>
-                    <form action="#" method="post" id="contactform1" class="footer-suscribe-form">
+                    <form  method="post" id="contactform1" class="footer-suscribe-form">
                       <div class="input-group mb-3">
-                        <input type="email" name="email" id="emailInput" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2" required>
+                        <input type="email" name="email" id="emailInput"
+                          class="form-control border-secondary text-white bg-transparent" placeholder="Enter email"
+                          aria-label="Enter email" aria-describedby="button-addon2" required>
                         <div class="input-group-append">
-                          <button class="btn btn-primary text-white" type="button" id="s-btn1">Subscribe</button>
+                          <button class="btn btn-primary text-white" type="submit" id="s-btn1">Subscribe</button>
+                          <button class="btn btn-primary text-white" type="button" style="display: none;" id="loading1">Subscribing...</button>
                         </div>
                       </div>
                       <p class="newsletter_text">Subscribe to the newsletter to get updates</p>
                     </form>
-                    <button style="display: none;" id="loading1">Subscribing...</button>
                   </div>
                 </div>
               </div>
@@ -262,43 +264,41 @@
           <script src="js/jquery-3.3.1.min.js"></script>
           <script>
             $(document).ready(function () {
-              $('#s-btn1').click(function () {
-                const emailInput = $('#emailInput');
-                const loading = $('#loading1');
-                const btn = $('#s-btn1');
-                const successMessage = $('#successMessage1');
-          
-                // Validate email input
-                if (emailInput.val() === '') {
-                  alert('Please enter a valid email address.');
-                  return; // Prevent submission
-                }
-          
-                // Show loading indicator
-                loading.show();
-                btn.prop('disabled', true); // Disable the button to prevent multiple clicks
-          
+              $('#contactform1').submit((e) => {
+                e.preventDefault()
+      
+                const loading = document.getElementById('loading1')
+                const btn = document.getElementById('s-btn1')
+                const successMessage = document.getElementById('successMessage1') // Updated ID
+      
+                loading.style.display = 'block'
+                btn.style.display = 'none'
+      
                 $.ajax({
-                  url: 'https://script.google.com/macros/s/AKfycbyH6foigFQ6qbqTUmIFdKD7UqxGi5pgH8EmNKP2-ZwYHhmf_Qq9hfnJ1JyEBcUvRuzl/exec',
+                  url:
+                    'https://script.google.com/macros/s/AKfycbyH6foigFQ6qbqTUmIFdKD7UqxGi5pgH8EmNKP2-ZwYHhmf_Qq9hfnJ1JyEBcUvRuzl/exec',
                   data: $('#contactform1').serialize(),
                   method: 'post',
                   success: function (response) {
-                    console.log(response); // Log the response for debugging
-                    successMessage.show(); // Show success message
-                    $('#contactform1')[0].reset(); // Clear form fields
+                    if (successMessage) {
+                      successMessage.style.display = 'block' // Show success message
+                    }
+                    // Clear form fields
+                    $('#contactform1')[0].reset()
+      
+                    btn.style.display = 'block'
+                    loading.style.display = 'none'
                   },
                   error: function (err) {
-                    console.log(err); // Log any error messages for debugging
-                    alert('Something went wrong. Please try again.');
+                    loading.style.display = 'none'
+                    btn.style.display = 'block'
+                    alert('Something went wrong. Please try again.')
                   },
-                  complete: function () {
-                    loading.hide(); // Hide loading indicator
-                    btn.prop('disabled', false); // Re-enable the button
-                  },
-                });
-              });
-            });
+                })
+              })
+            })
           </script>
+  
           
           
         
@@ -307,7 +307,7 @@
             <div class="border-top pt-5">
               <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://auxxweb.in" target="_blank" >Auxxweb Solutions</a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is designed and developed by <a href="https://auxxweb.in" target="_blank" >Auxxweb Solutions</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
             </div>
