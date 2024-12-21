@@ -225,43 +225,18 @@
                 </div>
                 <div class="mb-5">
                   <h2 class="footer-heading mb-4">Subscribe to Newsletter</h2>
-                  <script>
-                    $(document).ready(function () {
-                      $('#contactform1').submit((e) => {
-                        e.preventDefault()
-
-                        const loading = document.getElementById('loading1')
-                        const btn = document.getElementById('s-btn1')
-                        const successMessage = document.getElementById('successMessage1') // Updated ID
-
-                        loading.style.display = 'block'
-                        btn.style.display = 'none'
-
-                        $.ajax({
-                          url:
-                            'https://script.google.com/macros/s/AKfycbyH6foigFQ6qbqTUmIFdKD7UqxGi5pgH8EmNKP2-ZwYHhmf_Qq9hfnJ1JyEBcUvRuzl/exec',
-                          data: $('#contactform1').serialize(),
-                          method: 'post',
-                          success: function (response) {
-                            if (successMessage) {
-                              successMessage.style.display = 'block' // Show success message
-                            }
-                            // Clear form fields
-                            $('#contactform1')[0].reset()
-
-                            btn.style.display = 'block'
-                            loading.style.display = 'none'
-                          },
-                          error: function (err) {
-                            loading.style.display = 'none'
-                            btn.style.display = 'block'
-                            alert('Something went wrong. Please try again.')
-                          },
-                        })
-                      })
-                    })
-                  </script>
-
+                  <form  method="post" id="contactform1" class="footer-suscribe-form">
+                    <div class="input-group mb-3">
+                      <input type="email" name="email" id="emailInput"
+                        class="form-control border-secondary text-white bg-transparent" placeholder="Enter email"
+                        aria-label="Enter email" aria-describedby="button-addon2" required>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary text-white" type="submit" id="s-btn1">Subscribe</button>
+                        <button class="btn btn-primary text-white" type="button" style="display: none;" id="loading1">Subscribing...</button>
+                      </div>
+                    </div>
+                    <p class="newsletter_text">Subscribe to the newsletter to get updates</p>
+                  </form>
                 </div>
               </div>
             </div>
