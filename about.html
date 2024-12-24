@@ -66,7 +66,7 @@
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <li ><a href="index.html" class="nav-link">Home</a></li>
                   <li ><a href="project.html" class="nav-link">Project</a></li>
-                  <li class="active "><a href="services.html" class="nav-link">Services</a></li>
+                  <li class=" "><a href="services.html" class="nav-link">Services</a></li>
                 </ul>
               </nav>
             </div>
@@ -81,7 +81,7 @@
             <div class="col-lg-4">
               <nav class="site-navigation text-left mr-auto " role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                  <li><a href="about.html" class="nav-link ">About</a></li>
+                  <li><a href="about.html" class="nav-link active ">About</a></li>
                   <li><a href="blog.html" class="nav-link">Gallery</a></li>
                   <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
@@ -238,12 +238,12 @@
         <div class="row">
           <div class="col-md-6">
             <div class="row">
-              <div class="col-md-7 ">
-                <h2 class="footer-heading mb-0">About Us</h2>
-<p>Our expertise spans architecture, interior design in Calicut, and product design, with a focus on enhancing the human experience through spaces that inspire and endure.</p>
+              <div class="col-md-7">
+                <h2 class="footer-heading mb-4">About Us</h2>
+                <p>Our expertise spans architecture, interior design in Calicut, and product design, with a focus on enhancing the human experience through spaces that inspire and endure.</p>
               </div>
-              <div class="col-md-4 ml-auto ">
-                <h2 class="footer-heading mb-3">Features</h2>
+              <div class="col-md-4 ml-auto">
+                <h2 class="footer-heading mb-4">Features</h2>
                 <ul class="list-unstyled">
                   <li><a href="./index.html">Home</a></li>
                   <li><a href="./project.html">Project</a></li>
@@ -257,81 +257,82 @@
           </div>
           <div class="site-section">
             <div class="container">
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div id="successMessage1" style="display: none;" class="alert alert-success text-center">
-                    Thank you for subscribing!
-                  </div>
-                  <div class="mb-5">
-                    <h2 class="footer-heading mb-4">Subscribe to Newsletter</h2>
-                    <form  method="post" id="contactform1" class="footer-suscribe-form">
-                      <div class="input-group mb-3">
-                        <input type="email" name="email" id="emailInput"
-                          class="form-control border-secondary text-white bg-transparent" placeholder="Enter email"
-                          aria-label="Enter email" aria-describedby="button-addon2" required>
-                        <div class="input-group-append">
-                          <button class="btn btn-primary text-white" type="submit" id="s-btn1">Subscribe</button>
-                          <button class="btn btn-primary text-white" type="button" style="display: none;" id="loading1">Subscribing...</button>
-                        </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div id="successMessage1" style="display: none;" class="alert alert-success text-center">
+                  Thank you for subscribing!
+                </div>
+                <div class="mb-5">
+                  <h2 class="footer-heading mb-4">Subscribe to Newsletter</h2>
+                  <form  method="post" id="contactform1" class="footer-suscribe-form">
+                    <div class="input-group mb-3">
+                      <input type="email" name="email" id="emailInput"
+                        class="form-control border-secondary text-white bg-transparent" placeholder="Enter email"
+                        aria-label="Enter email" aria-describedby="button-addon2" required>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary text-white" type="submit" id="s-btn1">Subscribe</button>
+                        <button class="btn btn-primary text-white" type="button" style="display: none;" id="loading1">Subscribing...</button>
                       </div>
-                      <p class="newsletter_text">Subscribe to the newsletter to get updates</p>
-                    </form>
-                  </div>
+                    </div>
+                    <p class="newsletter_text">Subscribe to the newsletter to get updates</p>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
-          
-          <script src="js/jquery-3.3.1.min.js"></script>
-          <script>
-            $(document).ready(function () {
-              $('#contactform1').submit((e) => {
-                e.preventDefault()
-      
-                const loading = document.getElementById('loading1')
-                const btn = document.getElementById('s-btn1')
-                const successMessage = document.getElementById('successMessage1') // Updated ID
-      
-                loading.style.display = 'block'
-                btn.style.display = 'none'
-      
-                $.ajax({
-                  url:
-                    'https://script.google.com/macros/s/AKfycbyH6foigFQ6qbqTUmIFdKD7UqxGi5pgH8EmNKP2-ZwYHhmf_Qq9hfnJ1JyEBcUvRuzl/exec',
-                  data: $('#contactform1').serialize(),
-                  method: 'post',
-                  success: function (response) {
-                    if (successMessage) {
-                      successMessage.style.display = 'block' // Show success message
-                    }
-                    // Clear form fields
-                    $('#contactform1')[0].reset()
-      
-                    btn.style.display = 'block'
-                    loading.style.display = 'none'
-                  },
-                  error: function (err) {
-                    loading.style.display = 'none'
-                    btn.style.display = 'block'
-                    alert('Something went wrong. Please try again.')
-                  },
-                })
+        </div>
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script>
+          $(document).ready(function () {
+            $('#contactform1').submit((e) => {
+              e.preventDefault()
+    
+              const loading = document.getElementById('loading1')
+              const btn = document.getElementById('s-btn1')
+              const successMessage = document.getElementById('successMessage1') // Updated ID
+    
+              loading.style.display = 'block'
+              btn.style.display = 'none'
+    
+              $.ajax({
+                url:
+                  'https://script.google.com/macros/s/AKfycbyH6foigFQ6qbqTUmIFdKD7UqxGi5pgH8EmNKP2-ZwYHhmf_Qq9hfnJ1JyEBcUvRuzl/exec',
+                data: $('#contactform1').serialize(),
+                method: 'post',
+                success: function (response) {
+                  if (successMessage) {
+                    successMessage.style.display = 'block' // Show success message
+                  }
+                  // Clear form fields
+                  $('#contactform1')[0].reset()
+    
+                  btn.style.display = 'block'
+                  loading.style.display = 'none'
+                },
+                error: function (err) {
+                  loading.style.display = 'none'
+                  btn.style.display = 'block'
+                  alert('Something went wrong. Please try again.')
+                },
               })
             })
-          </script>
-  
-          
-          
-        
+          })
+        </script>
+
+
+
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
             <div class="border-top pt-5">
               <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is designed and developed by <a href="https://auxxweb.in" target="_blank" >Auxxweb Solutions</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | This website is designed and developed by <a href="https://auxxweb.in"
+                  target="_blank">Auxxweb Solutions</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
             </div>
           </div>
         </div>
