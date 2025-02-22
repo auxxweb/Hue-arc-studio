@@ -42,7 +42,7 @@
   </head>
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-    
+
     <div class="site-wrap" id="home-section">
 
       <div class="site-mobile-menu site-navbar-target">
@@ -84,18 +84,20 @@
                   <li><a href="about.html" class="nav-link active ">About</a></li>
                   <li><a href="blog.html" class="nav-link">Gallery</a></li>
                   <li><a href="contact.html" class="nav-link">Contact</a></li>
+                  <li><a href="https://auxxweb.github.io/hue-arc-hiring/" class="nav-link">Careers</a></li>
+
                 </ul>
               </nav>
             </div>
-            
+
 
           </div>
         </div>
 
       </header>
 
-    
-    
+
+
     <div class="ftco-blocks-cover-1">
         <div class="ftco-cover-1" style="background-image: url('images/img_8.jpg');">
             <div class="container">
@@ -103,13 +105,13 @@
                 <div class="col-lg-6 text-center text-white">
                   <h1 style="color: white;">Our Services</h1>
                   <p>Innovative Designs for Timeless Structures.</p>
-                  
+
                 </div>
               </div>
             </div>
         </div>
       </div>
-    
+
 
       <div class="site-section">
       <div class="container">
@@ -218,7 +220,7 @@
               <blockquote class="testimonial-1">
                 <span class="quote quote-icon-wrap"><span class="icon-format_quote"></span></span>
                 <p> Hue Arc Studio did an amazing job designing our store. They blended style with practicality, making the space not only beautiful but also great for customers. Truly the best interior designers we've worked with</p>
-                <cite><span class="text-black">Megna</span> 
+                <cite><span class="text-black">Megna</span>
                   <!-- &mdash; <span class="text-muted">CEO and Co-Founder</span></cite> -->
               </blockquote>
             </div>
@@ -226,13 +228,13 @@
         </div>
       </div>
     </div>
-    
 
-    
 
-    
 
-    
+
+
+
+
     <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -244,12 +246,13 @@
               </div>
               <div class="col-md-4 ml-auto">
                 <h2 class="footer-heading mb-4">Features</h2>
-                <ul class="list-unstyled">
+               <ul class="list-unstyled">
                   <li><a href="./index.html">Home</a></li>
                   <li><a href="./project.html">Project</a></li>
                   <li><a href="./services.html">Service</a></li>
                   <li><a href="./about.html">About</a></li>
                   <li><a href="./contact.html">Contact</a></li>
+                  <li><a href="https://auxxweb.github.io/hue-arc-hiring/">Careers</a></li>
                 </ul>
               </div>
 
@@ -288,14 +291,14 @@
           $(document).ready(function () {
             $('#contactform1').submit((e) => {
               e.preventDefault()
-    
+
               const loading = document.getElementById('loading1')
               const btn = document.getElementById('s-btn1')
               const successMessage = document.getElementById('successMessage1') // Updated ID
-    
+
               loading.style.display = 'block'
               btn.style.display = 'none'
-    
+
               $.ajax({
                 url:
                   'https://script.google.com/macros/s/AKfycbyH6foigFQ6qbqTUmIFdKD7UqxGi5pgH8EmNKP2-ZwYHhmf_Qq9hfnJ1JyEBcUvRuzl/exec',
@@ -307,7 +310,7 @@
                   }
                   // Clear form fields
                   $('#contactform1')[0].reset()
-    
+
                   btn.style.display = 'block'
                   loading.style.display = 'none'
                 },
