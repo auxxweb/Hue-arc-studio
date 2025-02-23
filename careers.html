@@ -51,7 +51,16 @@
         </style>
     </head>
 
+    <!-- Loader Overlay -->
+    <div id="pageLoader" class="loader-overlay">
+        <div class="loader" style="z-index: 9999;"></div>
+        <p style="z-index: 9999;">Submitting...</p>
+    </div>
     <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+        <!-- Submit Button -->
+        <button id="submitButton">Submit</button>
+
         <div class="site-wrap" id="home-section">
             <div class="site-mobile-menu site-navbar-target">
                 <div class="site-mobile-menu-header">
@@ -534,6 +543,8 @@
                     const loading = document.getElementById('loading');
                     const btn = document.getElementById('s-btn');
                     const successMessage = document.getElementById('successMessage');
+                    document.getElementById('pageLoader').style.display = 'flex';
+                    document.body.classList.add('loading');
 
                     loading.style.display = 'block';
                     btn.style.display = 'none';
@@ -594,6 +605,8 @@
                         method: 'post',
                         success: function (response) {
                             if (successMessage) {
+                                document.getElementById('pageLoader').style.display = 'none';
+                                document.body.classList.remove('loading');
                                 successMessage.style.display = 'block';
                             }
 
@@ -606,6 +619,8 @@
                         error: function (err) {
                             loading.style.display = 'none';
                             btn.style.display = 'block';
+                            document.getElementById('pageLoader').style.display = 'none';
+                            document.body.classList.remove('loading');
                             alert('Something went wrong. Please try again.');
                         },
                     });
